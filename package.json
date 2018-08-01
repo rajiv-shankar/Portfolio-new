@@ -1,0 +1,25 @@
+{
+  "name": "modern-portfolio",
+  "version": "1.0.0",
+  "description": "Responsive Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajiv-shankar/Portfolio-new.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Rajiv Shankar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajiv-shankar/Portfolio-new/issues"
+  },
+  "homepage": "https://github.com/rajiv-shankar/Portfolio-new#readme",
+  "dependencies": {
+    "node-sass": "^4.9.2"
+  }
+}
