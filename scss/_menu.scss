@@ -1,0 +1,18 @@
+// Menu button
+
+.menu-btn {  // "hamburger" menu
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  @include easeOut;
+  z-index: 3;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #fff;
+    @include easeOut;
+  }
+}
