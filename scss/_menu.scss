@@ -15,4 +15,9 @@
     background: #fff;
     @include easeOut;
   }
+
+  // Rotate into X With Menu Lines
+  &.close {
+    transform: rotate(180deg);
+  }
 }
