@@ -1,6 +1,6 @@
 // import modular fragment files (wo underscore or extension)
 @import "config";
-@import "menu";
+@import "menu";  // must be after "config"
 
 * {
   box-sizing: border-box;

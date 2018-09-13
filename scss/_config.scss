@@ -20,7 +20,7 @@ $background-opacity: 0.5;
       background-size: cover;
 
       // .overlay {
-      &:after {  // pseudo-element
+      &:after {  // pseudo-element, instead of <div class="overlay"> in index.html
         content: "";
         position: absolute;
         top: 0;

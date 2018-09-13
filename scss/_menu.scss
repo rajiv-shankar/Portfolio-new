@@ -1,17 +1,17 @@
-// Menu button
+// "hamburger" menu
 
-.menu-btn {  // "hamburger" menu
+.menu-btn {
   position: absolute;
-  top: 35px;
+  top: 35px;  // top-rght corner
   right: 35px;
   cursor: pointer;
-  @include easeOut;
-  z-index: 3;
+  @include easeOut; // transition
+  z-index: 3;  // always on top
 
   .btn-line {
     width: 28px;
     height: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 5px;  // space in-btw
     background: #fff;
     @include easeOut;
   }
@@ -19,5 +19,31 @@
   // Rotate into X With Menu Lines
   &.close {
     transform: rotate(180deg);
+  }
+
+  // Rotate into X with menu lines
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        // background: red;
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        // background: red;
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+    }
   }
 }
