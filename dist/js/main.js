@@ -3,10 +3,10 @@ const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
-const navItems = document.querySelectorAll(".nav-item");  // querySelectorAll: takes all elements, else only first
+const navItems = document.querySelectorAll(".nav-item");  // q_All: take all elements, else only first
 
 // Set initial showMenu state (menu closed)
-let showMenu = false;  // let: allows reassignment
+let showMenu = false;
 
 menuBtn.addEventListener("click", toggleMenu);
 
