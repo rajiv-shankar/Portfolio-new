@@ -24,7 +24,7 @@
 
       // Line 1 - Rotate
       &:nth-child(1) {
-        background: red;
+        background: #eece1a;
         transform: rotate(45deg) translate(5px, 5px);
       }
 
@@ -35,7 +35,7 @@
 
       // Line 3 - Rotate
       &:nth-child(3) {
-        background: red;
+        background: #eece1a;
         transform: rotate(-45deg) translate(7px, -6px);
       }
 
@@ -94,14 +94,14 @@
     .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/portrait.jpg");
+      background: url("../img/profile_250x250.jpg");
       border-radius: 50%;
       border: solid 3px $secondary-color;
     }
   }
 
   .nav-item {
-    transform: translate3d(600, 0, 0);  // pushes it off (right of) the page
+    transform: translate3d(600px, 0, 0);  // pushes it off (right of) the page
     @include easeOut;
 
   }
