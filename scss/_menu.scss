@@ -104,5 +104,28 @@
     transform: translate3d(600px, 0, 0);  // pushes it off (right of) the page
     @include easeOut;
 
+    &.show {
+      transform: translate3d(0, 0, 0);  // slide it in from right
+    }
+  }
+
+  .nav-link {  // style individual links
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #eece1a;
+    text-decoration: none;
+    @include easeOut;
+  }
+
+}
+
+// Delay each nav item slide by 0.2s (changed from 0.1s so that each item can be read as they enter)
+@for $x from 1 through 4 {  // for each of the 4 items
+  .nav-item:nth-child(#{$x}) {  // like a ES6 template literal
+    transition-delay: $x * 0.2s;  // each item enters 0.2s apart
   }
 }
