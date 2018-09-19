@@ -1,0 +1,22 @@
+// Widescreens
+@include mediaXlarge {
+
+}
+
+// Desktops & Laptops
+@include mediaLarge {
+
+}
+
+// Tablets & Small Laptops
+@include mediaMedium {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// Smartphones
+@include mediaSmall {
+
+}
