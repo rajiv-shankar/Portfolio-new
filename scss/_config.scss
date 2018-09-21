@@ -35,22 +35,22 @@ $background-opacity: 0.5;
 }
 
 // Media query mixins
-@mixin mediaSmall {
+@mixin mediaSmall {  // Smartphones
   @media screen and (max-width: 500px) {
     @content;
   }
 }
-@mixin mediaMedium {
+@mixin mediaMedium {  // Tablets & Small Laptops
   @media screen and (max-width: 768px) {
     @content;
   }
 }
-@mixin mediaLarge {
+@mixin mediaLarge {  // Desktops & Laptops
   @media screen and (min-width: 769px) and (max-width: 1170px) {
     @content;
   }
 }
-@mixin mediaXlarge {
+@mixin mediaXlarge {  // Widescreens
   @media screen and (min-width: 1171px) {
     @content;
   }

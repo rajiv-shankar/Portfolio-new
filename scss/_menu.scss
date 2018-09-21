@@ -58,11 +58,11 @@
   &-branding,
   &-nav {
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
+    flex-flow: column wrap;  // flex items vertically (from top to bottom)
+    align-items: center;  // vertically (position items at center of container)
+    justify-content: center;  // horizontally
     float: left;
-    width: 50%;
+    width: 50%;  // each side shd take up 50%
     height: 100vh;
     overflow: hidden;
   }
@@ -73,22 +73,22 @@
     padding: 0;
     background: darken($primary-color, 5);
     list-style: none;
-    transform: translate3d(0, -100%, 0);  // pushes it off (above) the page
+    transform: translate3d(0, -100%, 0);  // y-axis: -100% => push item above the page
     @include easeOut;
 
     &.show {  // slide it in from top
-      transform: translate3d(0, 0, 0);  // pulls it down to the page
+      transform: translate3d(0, 0, 0);  // slide it down to the page {center?}
     }
   }
 
   // Branding side
   &-branding {
     background: $primary-color;
-    transform: translate3d(0, 100%, 0);  // pushes it off (above) the page
+    transform: translate3d(0, 100%, 0);  // y-axis: 100% => push item below the page
     @include easeOut;
 
     &.show {  // slide it in from bottom
-      transform: translate3d(0, 0, 0);  // pulls it down to the page
+      transform: translate3d(0, 0, 0);  // slide it up to the page {center?}
     }
 
     .portrait {
@@ -101,11 +101,11 @@
   }
 
   .nav-item {
-    transform: translate3d(600px, 0, 0);  // pushes it off (right of) the page
+    transform: translate3d(600px, 0, 0);  // x-axis: 600px => push item to right of the page {same as (100%, 0, 0) ?
     @include easeOut;
 
     &.show {
-      transform: translate3d(0, 0, 0);  // slide it in from right
+      transform: translate3d(0, 0, 0);  // slide it in to the page {center?}
     }
 
     &.current > a {  // color link inside current
