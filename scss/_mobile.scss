@@ -1,11 +1,17 @@
+// RESPONSIVE DESIGN
+
 // Widescreens: (min-width: 1171px)
 @include mediaXlarge {
-
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Desktops & Laptops: (min-width: 769px) and (max-width: 1170px)
 @include mediaLarge {
-
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 // Tablets & Small Laptops: (max-width: 768px)
@@ -58,6 +64,11 @@
       "job3";
     grid-template-columns: 1fr;
   }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 // Smartphones: (max-width: 500px)
@@ -66,4 +77,7 @@
     margin-top: 10vh;
   }
 
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
