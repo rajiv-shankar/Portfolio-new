@@ -171,7 +171,7 @@ main {
     border: #eece1a 3px solid; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.25rem; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
@@ -179,11 +179,16 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
-    background: #515151;
+    background: #5e5e5e;
     padding: 0.5rem;
     border-bottom: #eece1a 5px solid; }
     .about-info .job h2 {
       color: #eece1a; }
+    .about-info .job h5 {
+      font-size: 1rem; }
+
+#about h1 {
+  font-size: 4rem; }
 
 #main-footer {
   text-align: center;

@@ -93,7 +93,7 @@ main {
 
   .bio {
     grid-area: bio;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .job-1 {
@@ -109,15 +109,26 @@ main {
   }
 
   .job {
-    background: lighten($primary-color, 5);
+    background: lighten($primary-color, 10);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
 
-    & h2 {  // select <h2> within <div class="job"> [my addition]
-      color: $secondary-color;  // change heading color
+    & h2 {  // select <h2> within <div class="job"> {my+}
+      color: $secondary-color;  // make heading color distinctive
     }
+
+    & h5 {  // select <h5> within <div class="job"> {my+}
+      font-size: 1rem;
+    }
+
   }
 
+}
+
+#about {
+  & h1 {
+    font-size: 4rem;  // {my ∆: h1 otherwise looking too big}
+  }
 }
 
 #main-footer {
