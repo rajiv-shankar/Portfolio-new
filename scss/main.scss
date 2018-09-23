@@ -1,8 +1,14 @@
-// IMPORT MODULAR FRAGMENT FILES (no underscore or extension in filename)
+/* --------------------------- PRIMARY SASS FILE ---------------------------- */
+
+// IMPORT MODULAR FRAGMENT FILES -----------------------------------------------
+
+// no underscore or extension in filename
+// could be kept in "partials" folder; eg: @import "partials/config"
+// see http://thesassway.com/beginner/how-to-structure-a-sass-project
 
 @import "config";
-@import "menu";  // must be after "config"
-// @import "mobile" at the bottom
+@import "menu";  // must load after "config"
+// @import "mobile" at the bottom, must load after regular css {better to name it "responsive"?}
 
 // FOR ALL PAGES ---------------------------------------------------------------
 
@@ -11,24 +17,23 @@
 }
 
 body {
-  @include background;  // use: @mixin background (fr _config.scss)
+  @include background;  // use "background" mixin (_config.scss)
   background: $primary-color;
-  color: set-text-color($primary-color);
+  color: set-text-color($primary-color);  // use "set-text-color" function (_config.scss)
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
-// Headings
 h1,
 h2,
-h3 {
+h3 {  // default settings, can vary for other pages [see L213]
   margin: 0;
-  font-weight: 400;
+  font-weight: 400;  // {why same font-weight for all headings?}
 
   &.lg-heading {
-    font-size: 6rem;  // rem is responsive, 1rem = default HTML font size = 16px
+    font-size: 6rem;  // 1rem = default font-size of root element (16px?, usu); sets font-size relative to BROWSER'S base font-size (will NOT inherit from its parents); responsive, so best for creating perfectly scalable layout
   }
 
   &.sm-heading {
@@ -45,7 +50,7 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;  // how close to user the element is: higher = closer
+  z-index: 2;  // lower z-index > closer to viewer
   width: 100%;
 }
 
