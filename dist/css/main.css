@@ -199,9 +199,9 @@ main {
 
 .btn, .btn-dark, .btn-light {
   display: block;
-  padding: 0.5rem 1rem;
+  margin-bottom: 0.3rem;
   border: 0;
-  margin-bottom: 0.3rem; }
+  padding: 0.5rem 1rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #eece1a;
     color: #000; }

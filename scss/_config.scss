@@ -33,12 +33,12 @@ $background-opacity: 0.5;
   }
 }
 
-// Text color
+// Switch font color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
-    @return #000;
+    @return #000;  // black
   } @else {
-    @return #fff;
+    @return #fff;  // white
   }
 }
 

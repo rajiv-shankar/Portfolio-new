@@ -148,7 +148,7 @@ main {
     &:hover {
       opacity: 0.5;
       border-color: $secondary-color;
-      @include easeOut;
+      @include easeOut;  // use "easeOut" mixin (_config.scss)
     }
   }
 }
@@ -182,9 +182,9 @@ main {
 // FOR contact.html ------------------------------------------------------------
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: flex;  // expands items to fill available free space or shrinks them to prevent overflow
+  flex-wrap: wrap;   // items can be wrapped onto multiple lines
+  justify-content: space-evenly;  // spacing between two adjacent items is the same
   align-items: center;
   margin-top: 1rem;
 
@@ -193,13 +193,13 @@ main {
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
-    @include easeOut;
+    @include easeOut;  // use "easeOut" mixin (_config.scss)
 
-    &:hover {
-      padding: 0.5rem 1.5rem;
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-      span {
+    &:hover {  // {this looks cool!}
+      padding: 0.5rem 1.5rem;  // shrinks fr "1.5rem 2.5rem"
+      background: $secondary-color;  // switch background color
+      color: set-text-color($secondary-color);  // switch font color based on background color
+      span {  // changes color of the label (eg "Email:")
         color: set-text-color($secondary-color);
       }
     }
@@ -208,7 +208,7 @@ main {
 
 // OTHER -----------------------------------------------------------------------
 
-// {my ∆: h1 otherwise looks too big}
+// {my∆: h1 otherwise looks too big in "secondary" pages}
 #about,
 #work,
 #contact {
