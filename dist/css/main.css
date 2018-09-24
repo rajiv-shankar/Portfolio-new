@@ -130,7 +130,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    background: rgba(94, 94, 94, 0.5); }
 
 a {
   color: #fff;
@@ -184,8 +184,6 @@ main {
     border-bottom: #eece1a 5px solid; }
     .about-info .job h2 {
       color: #eece1a; }
-    .about-info .job h5 {
-      font-size: 1rem; }
 
 .projects {
   display: grid;

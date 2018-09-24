@@ -1,4 +1,4 @@
-/* --------------------------- PRIMARY SASS FILE ---------------------------- */
+// ============================= PRIMARY SASS FILE =============================
 
 // IMPORT MODULAR FRAGMENT FILES -----------------------------------------------
 
@@ -8,7 +8,7 @@
 
 @import "config";
 @import "menu";  // must load after "config"
-// @import "mobile" at the bottom, must load after regular css {better to name it "responsive"?}
+// @import "mobile" at the bottom, must load after regular css
 
 // FOR ALL PAGES ---------------------------------------------------------------
 
@@ -18,7 +18,7 @@
 
 body {
   @include background;  // use "background" mixin (_config.scss)
-  background: $primary-color;
+  background: $primary-color;  // variable (_config.scss)
   color: set-text-color($primary-color);  // use "set-text-color" function (_config.scss)
   height: 100%;
   margin: 0;
@@ -28,18 +28,18 @@ body {
 
 h1,
 h2,
-h3 {  // default settings, can vary for other pages [see L213]
+h3 {  // default settings, can vary for other pages [see L126, L213]
   margin: 0;
   font-weight: 400;  // {why same font-weight for all headings?}
 
-  &.lg-heading {
-    font-size: 6rem;  // 1rem = default font-size of root element (16px?, usu); sets font-size relative to BROWSER'S base font-size (will NOT inherit from its parents); responsive, so best for creating perfectly scalable layout
+  &.lg-heading {  // h1.lg-heading: title
+    font-size: 6rem;  // 1rem = default font-size of root element (usually 16px, so 6rem = 96px); sets font-size relative to BROWSER'S default font-size (will NOT inherit from its parents); responsive, so best for creating perfectly scalable layout
   }
 
-  &.sm-heading {
+  &.sm-heading {  // h1.sm-heading: byline
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5)
+    background: rgba(lighten($primary-color, 10), 0.5);  // adds 10% to $color's HSL lightness value (can be negative): so #444444 becomes #5d5d5d; rgba(color, 0.5): opacity 50%
   }
 }
 
@@ -50,7 +50,7 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;  // lower z-index > closer to viewer
+  z-index: 2;  // lower z-index: closer to viewer
   width: 100%;
 }
 
@@ -59,9 +59,9 @@ header {
 }
 
 main {
-  padding: 4rem;
+  padding: 4rem;  // so 4x16px = 64px space btw border & content (default value)
   // height: 100%;
-  min-height: calc(100vh - 60px);  // create "sticky" footer, by pushing it to the bottom of the viewport, by expanding "main" (the element above "footer") to entire viewport except footer height (60px)
+  min-height: calc(100vh - 60px);  // by expanding "main" (the element above "footer") to entire viewport height less footer height (60px), footer is always pushed to bottom of page, creating a "sticky" footer
 
   .icons {
     margin-top: 1rem;
@@ -71,7 +71,7 @@ main {
 
       &:hover {
         color: $secondary-color;
-        @include easeOut;  // for using @mixins
+        @include easeOut;  // use "easeOut" mixin (_config.scss)
       }
     }
   }
@@ -91,7 +91,7 @@ main {
   grid-gap: 30px;
   grid-template-areas:
     "bioimage bio bio"
-    "job1 job2 job3";  // name each area below; stretch "bio" over 2 fractionals
+    "job1 job2 job3";  // 3fr (fractional) across; each "grid-area" named below; stretch "bio" over 2fr
   grid-template-columns: repeat(3, 1fr);  // {easier to just write: "1fr 1fr 1fr"?}
 
   .bio-image {
@@ -127,10 +127,9 @@ main {
       color: $secondary-color;  // make heading color distinctive
     }
 
-    & h5 {  // select <h5> within <div class="job"> {my+}
-      font-size: 1rem;
-    }
-
+    // & h5 {  // select <h5> within <div class="job"> {my+}
+    //   font-size: 1rem;  // make sub-heading larger
+    // }
   }
 
 }
@@ -139,11 +138,11 @@ main {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);  // default (see _mobile.scss)
   grid-gap: 0.7rem;
 
   img {
-    width: 100%;
+    width: 100%;  // 100% element (grid fr) width, but element resizes responsively w browser window
     border: 3px #fff solid;
 
     &:hover {
@@ -154,13 +153,13 @@ main {
   }
 }
 
-// Button styles
+// Buttons
 
-.btn {  // no class="btn"; will extend class to "btn-light" & "btn-dark"
+.btn {  // no class="btn"; will extend class to "btn-light" & "btn-dark" (these inherit fr class="btn")
   display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
   margin-bottom: 0.3rem;
+  border: 0;
+  padding: 0.5rem 1rem;
 
   &:hover {
     background: $secondary-color;
@@ -169,7 +168,7 @@ main {
 }
 
 .btn-dark {
-  @extend .btn;
+  @extend .btn;  // inherit properties from .btn
   background: darken($primary-color, 50);
   color: #fff;
 }
@@ -226,4 +225,4 @@ main {
   height: 60px;
 }
 
-@import "mobile";  // media queries must be at bottom bc shd run after initial css
+@import "mobile";  // media queries must be at bottom bc shd run after initial css {better to name it "responsive"?}
