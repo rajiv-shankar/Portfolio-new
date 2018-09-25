@@ -50,7 +50,7 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;  // lower z-index: closer to viewer
+  z-index: 2;  // higher z-index (stack order): closer to viewer
   width: 100%;
 }
 

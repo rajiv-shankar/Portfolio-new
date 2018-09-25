@@ -1,4 +1,4 @@
-// "hamburger" menu
+// "HAMBURGER" MENU
 
 .menu-btn {  // button "outline"
   position: absolute;  // pin element in specific position inside the boundries of a relative parent
@@ -6,7 +6,7 @@
   right: 35px;
   cursor: pointer;
   @include easeOut; // transition effect
-  z-index: 3;  // always on top
+  z-index: 3;  // higher z-index (stack order): closer to viewer
 
   .btn-line {  // button lines
     width: 28px;
@@ -131,9 +131,9 @@
 
 }
 
-// Delay each nav item slide by 0.2s (changed from 0.1s so that each item can be read as they enter)
+// Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {  // for each of the 4 items
   .nav-item:nth-child(#{$x}) {  // like a ES6 template literal
-    transition-delay: $x * 0.2s;  // each item enters 0.2s apart
+    transition-delay: $x * 0.1s;  // each item enters 0.1s apart
   }
 }

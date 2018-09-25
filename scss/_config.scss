@@ -1,5 +1,5 @@
 // VARIABLES -------------------------------------------------------------------
-// values can be easily changed to alter look without chaging rest of css
+// values can be changed easily to alter look without searching & making multiple changes
 
 $primary-color: #444;
 $secondary-color: #eece1a;
@@ -8,7 +8,7 @@ $home-image: url(../img/background.jpg);
 $background-opacity: 0.5;
 
 // MIXINS ----------------------------------------------------------------------
-// code block to reuse throughout the site
+// code block (groups of CSS declarations) for reuse throughout the site
 // or: class w methods for use by other classes wo it being parent class of those classes
 
 @mixin background {
@@ -26,7 +26,7 @@ $background-opacity: 0.5;
         right: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;  // lower z-index > closer to viewer
+        z-index: -1;  // lower z-index (stack order): further fr viewer
         background: rgba($primary-color, $background-opacity);
       }
     }
@@ -46,13 +46,12 @@ $background-opacity: 0.5;
   transition: all 0.5s ease-out;
 }
 
-
-
-
 // Media query mixins
+// {why have this, as each only used once (in _mobile.scss)? }
+
 @mixin mediaSmall {  // Smartphones
-  @media screen and (max-width: 500px) {
-    @content;
+  @media screen and (max-width: 500px) {  // @media: query to check for different media types/devices (print v screen, screen resolution, browser viewport width &c) for applying different styles &c
+    @content;  // directive to pass content block into a mixin: @include mediaSmall {...} (see _mobile.scss)
   }
 }
 @mixin mediaMedium {  // Tablets & Small Laptops

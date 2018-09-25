@@ -1,9 +1,9 @@
-// RESPONSIVE DESIGN
+// RESPONSIVE DESIGN VERSIONS
 
 // Widescreens: (min-width: 1171px) --------------------------------------------
 @include mediaXlarge {
   .projects {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);  // each fr grid = 1/4 wide
   }
 }
 
@@ -61,7 +61,7 @@
       "bio"
       "job1"
       "job2"
-      "job3";
+      "job3";  // line them top to bottom
     grid-template-columns: 1fr;
   }
 
